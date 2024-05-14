@@ -1,0 +1,356 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url(../fonts/Roboto-Regular.woff);
+    src: url(../fonts/Roboto-Regular.woff2);
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url(../fonts/Roboto-Bold.woff);
+    src: url(../fonts/Roboto-Bold.woff2);
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url(../fonts/Roboto-Light.woff);
+    src: url(../fonts/Roboto-Light.woff2);
+    font-weight: 200;
+    font-style: normal;
+}
+
+
+$color_black: #000000;
+$color_softBlack: #151515;
+$color_softWhite: #fafafa;
+$color_grey: #7d7d7d;
+$color_greyTransp: #7d7d7d1a;
+$solidBorderSoftWhite: .15rem solid #fafafa;
+$solidBorderSoftBlack: .15rem solid #151515;
+$solidBorderGrey: .15rem solid #7d7d7d;
+$borderRadius: 2rem;
+$color_alert: #fefea6;
+$color_pink: #b900e7;
+$color_lightPink: #dcb3e7;
+$color_blue: #0500e7;
+$color_lightBlue: #c3c7ee;
+$color_green: #04912c;
+$color_lightGreen: #dfffd9;
+$color_turqoise: #00cbe7;
+$color_lightTourqoise: #edfdff;
+
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+*:focus {
+	outline: none;
+}
+
+body {
+    background-color: $color_softBlack;
+    color: $color_softWhite;
+    font-family: 'Roboto';
+    font-size: 16px;
+    font-weight: 200;
+}
+
+h2 {
+	font-family: 'Roboto';
+    font-size: 20px;
+    font-weight: 400;
+	line-height: 25px;
+}
+
+li {
+    list-style-type: none;
+}
+
+img {
+	max-width: 100%;
+	-o-object-fit: cover;
+	object-fit: cover;
+}
+
+a {
+	text-decoration: none;
+	color: #fff;
+}
+
+.container {
+	/* max-width: 400px; */
+
+	// padding-left: 35px;
+	// padding-right: 35px;
+    padding: 30px 20px;
+	/* margin-left: auto; */
+	/* margin-right: auto; */
+	/* align-items: center; */
+}
+
+button {
+	
+	border: none;
+	/* font: $fontRobotoBold; */
+	cursor: pointer;
+	transition: all 0.2s ease-in-out;
+}
+
+.button:hover {
+	background-color: #bc572b;
+}
+
+.button:focus {
+	box-shadow: inset 0px 0px 0px 3px #ce4307;
+}
+
+.button:active {
+	background-color: #ce4307;
+}
+
+// html.light-mode {
+//     --color_black: #fff;
+//     --color_softBlack: #fafafa;
+//     --color_softWhite: #151515;
+//     --color_greyTransp: #1a19191a;
+//     --solidBorderSoftWhite: .15rem solid #151515;
+//     --solidBorderSoftBlack: .15rem solid #fafafa;
+//     --solidBorderGrey: .15rem solid #7d7d7d;
+//     --color_alert: #f28175;
+// }
+
+// HEADER
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 64px;
+    padding: 10px;
+    border-bottom: 2px solid $color_softWhite;
+
+    &__logo {
+        display: block;
+        width: 40px;
+        height: 40px;
+        // background-color: #04912c;
+        background-image: url(../images/FG-logo.jpg);
+        background-size: cover;
+    }
+
+    &__burger,
+    &__mode {
+        background-color: inherit;
+        border: none;
+        width: 40px;
+        height: 40px;
+    }
+}
+
+// TEAM
+
+.team {
+
+    &__title {
+        margin-bottom: 30px;
+        font-size: 25px;
+        font-weight: 700;
+    }
+
+    &__container {
+        padding: 30px 20px;
+    }
+
+    &__list {
+        display: grid;       
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;   
+    }
+
+    &__member {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 10px;
+        min-height: 400px;
+        background-image: url(../images/portrait-man-freelancer.jpg);
+        background-size: cover;
+        background-position: center center;
+        box-shadow: inset 0px -15rem 30px -30px rgba(0,0,0,0.8);
+    }
+}
+
+.member {
+
+    &__header {
+        font-size: 20px;
+        font-weight: 400;
+        margin-bottom: 10px;
+    }
+
+    &__description {
+        font-size: 14px;
+        line-height: 25px;
+    }
+}
+
+// PROJECTS
+
+.projects {
+
+    &__title {
+        margin-bottom: 30px;
+        font-size: 25px;
+        font-weight: 700;
+    }
+
+    &__content {
+        padding-right: 35%;
+        font-size: 20px;
+        line-height: 25px;
+    }
+
+   
+}
+
+.swiper-wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.partners__item {
+    padding-right: 40px;
+}
+
+.partners__card {
+    
+    filter: grayscale(1);
+}
+
+
+// CONNECTION
+
+.connection {
+
+    &__title {
+        margin-bottom: 30px;
+        font-size: 25px;
+        font-weight: 700;
+    }
+
+    &__content {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    &__contacts {
+        display: flex;
+        flex-direction: column;
+        // justify-content: space-between;
+        // height: 200px;
+        padding-right: 35%;
+        grid-column: span 1;
+        font-size: 25px;
+        font-weight: 200;
+    }
+
+    &__phone {
+        margin-bottom: 50px;
+    }
+
+    &__form {
+        grid-column: span 1;
+        
+    }
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    input {
+        height: 46px;
+        background-color: inherit;
+        border: 1.5px solid $color_softWhite;
+        border-radius: 7px;
+        padding: 10px;
+        color: $color_softWhite;
+        font-family: 'Roboto';
+        font-size: 18px;
+        font-weight: 200;
+    }
+
+    &__submit {
+        align-self: flex-end;
+        width: fit-content;
+        padding: 8px 20px;
+        background-color: inherit;
+        font-family: 'Roboto';
+        font-size: 16px;
+        font-weight: 400;
+        border: 1px solid $color_softWhite;
+        border-radius: 18px;
+        color: $color_softWhite;
+    }
+}
+
+// ABOUT
+
+.about {
+    & p:not(:last-child) {
+        margin-bottom: 20px;
+    }
+
+    &__title {
+        margin-bottom: 30px;
+        font-size: 25px;
+        font-weight: 700;
+    }
+
+    &__team,
+    &__company,
+    &__history {
+        padding-right: 35%;
+        font-size: 20px;
+        line-height: 25px;
+    }
+}
+
+// FOOTER 
+
+.footer {
+    height: 64px;
+    margin-top: auto;
+    border-top: 2px solid $color_softWhite;
+
+    &__container {
+        display: flex;
+        // width: 30%;
+        padding: 5px;
+        height: 100%;
+        flex-direction: column;
+        justify-content: end;
+    }
+
+    &__rights {
+        align-self: flex-end;
+        font-weight: 200;
+        font-size: 12px;
+    }
+}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,11 @@
+{
+  "name": "frameguard",
+  "version": "1.0.0",
+  "description": "Frame Guard Website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Senin Andrey",
+  "license": "ISC"
+}

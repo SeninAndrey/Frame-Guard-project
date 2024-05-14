@@ -1,0 +1,254 @@
+@font-face {
+  font-family: "Roboto";
+  src: url(../fonts/Roboto-Regular.woff);
+  src: url(../fonts/Roboto-Regular.woff2);
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url(../fonts/Roboto-Bold.woff);
+  src: url(../fonts/Roboto-Bold.woff2);
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url(../fonts/Roboto-Light.woff);
+  src: url(../fonts/Roboto-Light.woff2);
+  font-weight: 200;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: none;
+}
+
+body {
+  background-color: #151515;
+  color: #fafafa;
+  font-family: "Roboto";
+  font-size: 16px;
+  font-weight: 200;
+}
+
+h2 {
+  font-family: "Roboto";
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 25px;
+}
+
+li {
+  list-style-type: none;
+}
+
+img {
+  max-width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.container {
+  /* max-width: 400px; */
+  padding: 30px 20px;
+  /* margin-left: auto; */
+  /* margin-right: auto; */
+  /* align-items: center; */
+}
+
+button {
+  border: none;
+  /* font: $fontRobotoBold; */
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.button:hover {
+  background-color: #bc572b;
+}
+
+.button:focus {
+  box-shadow: inset 0px 0px 0px 3px #ce4307;
+}
+
+.button:active {
+  background-color: #ce4307;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 64px;
+  padding: 10px;
+  border-bottom: 2px solid #fafafa;
+}
+.header__logo {
+  display: block;
+  width: 40px;
+  height: 40px;
+  background-image: url(../images/FG-logo.jpg);
+  background-size: cover;
+}
+.header__burger, .header__mode {
+  background-color: inherit;
+  border: none;
+  width: 40px;
+  height: 40px;
+}
+
+.team__title {
+  margin-bottom: 30px;
+  font-size: 25px;
+  font-weight: 700;
+}
+.team__container {
+  padding: 30px 20px;
+}
+.team__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.team__member {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 10px;
+  min-height: 400px;
+  background-image: url(../images/portrait-man-freelancer.jpg);
+  background-size: cover;
+  background-position: center center;
+  box-shadow: inset 0px -15rem 30px -30px rgba(0, 0, 0, 0.8);
+}
+
+.member__header {
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+.member__description {
+  font-size: 14px;
+  line-height: 25px;
+}
+
+.projects__title {
+  margin-bottom: 30px;
+  font-size: 25px;
+  font-weight: 700;
+}
+.projects__content {
+  padding-right: 35%;
+  font-size: 20px;
+  line-height: 25px;
+}
+
+.swiper-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.partners__item {
+  padding-right: 40px;
+}
+
+.partners__card {
+  filter: grayscale(1);
+}
+
+.connection__title {
+  margin-bottom: 30px;
+  font-size: 25px;
+  font-weight: 700;
+}
+.connection__content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.connection__contacts {
+  display: flex;
+  flex-direction: column;
+  padding-right: 35%;
+  grid-column: span 1;
+  font-size: 25px;
+  font-weight: 200;
+}
+.connection__phone {
+  margin-bottom: 50px;
+}
+.connection__form {
+  grid-column: span 1;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.form input {
+  height: 46px;
+  background-color: inherit;
+  border: 1.5px solid #fafafa;
+  border-radius: 7px;
+  padding: 10px;
+  color: #fafafa;
+  font-family: "Roboto";
+  font-size: 18px;
+  font-weight: 200;
+}
+.form__submit {
+  align-self: flex-end;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 8px 20px;
+  background-color: inherit;
+  font-family: "Roboto";
+  font-size: 16px;
+  font-weight: 400;
+  border: 1px solid #fafafa;
+  border-radius: 18px;
+  color: #fafafa;
+}
+
+.about p:not(:last-child) {
+  margin-bottom: 20px;
+}
+.about__title {
+  margin-bottom: 30px;
+  font-size: 25px;
+  font-weight: 700;
+}
+.about__team, .about__company, .about__history {
+  padding-right: 35%;
+  font-size: 20px;
+  line-height: 25px;
+}
+
+.footer {
+  height: 64px;
+  margin-top: auto;
+  border-top: 2px solid #fafafa;
+}
+.footer__container {
+  display: flex;
+  padding: 5px;
+  height: 100%;
+  flex-direction: column;
+  justify-content: end;
+}
+.footer__rights {
+  align-self: flex-end;
+  font-weight: 200;
+  font-size: 12px;
+}/*# sourceMappingURL=style.css.map */
