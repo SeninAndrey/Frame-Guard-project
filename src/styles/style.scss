@@ -22,6 +22,14 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Bookman';
+    src: url(../fonts/Bookman.woff);
+    src: url(../fonts/Bookman.woff2);
+    font-weight: 200;
+    font-style: normal;
+}
+
 
 $color_black: #000000;
 $color_softBlack: #151515;
@@ -63,9 +71,9 @@ body {
 
 h2 {
 	font-family: 'Roboto';
-    font-size: 20px;
-    font-weight: 400;
-	line-height: 25px;
+    margin-bottom: 30px;
+    font-size: 25px;
+    font-weight: 700;
 }
 
 li {
@@ -84,14 +92,18 @@ a {
 }
 
 .container {
-	/* max-width: 400px; */
+	max-width: 1400px;
 
 	// padding-left: 35px;
 	// padding-right: 35px;
     padding: 30px 20px;
-	/* margin-left: auto; */
-	/* margin-right: auto; */
-	/* align-items: center; */
+	margin-left: auto; 
+	margin-right: auto; 
+	align-items: center;
+}
+
+main {
+    padding-top: 64px;
 }
 
 button {
@@ -128,12 +140,29 @@ button {
 // HEADER
 
 .header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    height: 64px;
-    padding: 10px;
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
     border-bottom: 2px solid $color_softWhite;
+    background-color: $color_softBlack;
+    z-index: 3;
+
+    &__container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: 64px;
+    }
+
+    &__nav {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: 80%;
+
+    }
 
     &__logo {
         display: block;
@@ -153,129 +182,197 @@ button {
     }
 }
 
-// TEAM
+// LOGO
 
-.team {
-
-    &__title {
-        margin-bottom: 30px;
-        font-size: 25px;
-        font-weight: 700;
-    }
+.logo {
 
     &__container {
-        padding: 30px 20px;
-    }
-
-    &__list {
-        display: grid;       
-        grid-template-columns: repeat(3, 1fr);
-        gap: 10px;   
-    }
-
-    &__member {
         display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        padding: 10px;
-        min-height: 400px;
-        background-image: url(../images/portrait-man-freelancer.jpg);
-        background-size: cover;
-        background-position: center center;
-        box-shadow: inset 0px -15rem 30px -30px rgba(0,0,0,0.8);
+        flex-direction: row;
+    }
+    
+    &__img {
+        width: 11%;
+        margin-right: 10px;
+    }
+
+    &__name {
+        font-family: 'Bookman';
+        line-height: 1;
+        font-size: 12rem;
     }
 }
 
-.member {
+// ABOUT 
 
-    &__header {
-        font-size: 20px;
-        font-weight: 400;
+.swiper__about {
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.card {
+
+    &__img {
+        height: 250px;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    &__title {
         margin-bottom: 10px;
     }
 
     &__description {
-        font-size: 14px;
-        line-height: 25px;
+        margin-bottom: 10px;
+    }
+
+    &__more {
+        text-decoration: underline;
     }
 }
 
 // PROJECTS
 
 .projects {
+   
+    &__item {
+        align-self: center;
+        padding: 10px 30px;
+        filter: grayscale(1);
+    }
+}
 
-    &__title {
+.swiper__projects {
+    overflow: hidden;
+
+    & .swiper-wrapper {
+        transition-timing-function: linear;
+    }
+}
+
+// PRODUCTS
+
+.products {
+   
+    &__movie {
+        width: 100%;
+    }
+}
+
+// TEAM
+
+.team {
+
+    &__content {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
         margin-bottom: 30px;
-        font-size: 25px;
-        font-weight: 700;
+    }
+
+    &__founder .member {
+        &__content {
+            padding: 20px 30px;
+
+            & :not(:last-child) {
+                margin-bottom: 15px;
+            }
+        }
+        &__description {
+            font-size: 14px;
+            line-height: 18px;
+        }
+    }
+
+    &__description {
+        width: 50%;
+        font-size: 16px;
+        line-height: 25px;
+        text-indent: 20px;
+
+        & :not(:last-child) {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__crew {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+}
+
+.member {
+    flex: 1 1 30%;
+    display: flex;
+    flex-direction: row;
+
+    &__photo {
+        width: 50%;
+        height: 100%;
+
+        & img {
+            display: block;
+            min-height: 250px;
+            height: 100%;
+        }
     }
 
     &__content {
-        padding-right: 35%;
-        font-size: 20px;
-        line-height: 25px;
+        width: 50%;
+        padding: 10px 20px;
+        border: 1px solid $color_softWhite;
+
+        & :not(:last-child) {
+            margin-bottom: 5px;
+        }
     }
 
-   
-}
+    &__email {
+        display: block;
+        text-decoration: underline;
+    }
 
-.swiper-wrapper {
-    display: flex;
-    flex-direction: row;
+    &__description {
+        font-size: 12px;
+        line-height: 16px;
+    }
 }
-
-.partners__item {
-    padding-right: 40px;
-}
-
-.partners__card {
-    
-    filter: grayscale(1);
-}
-
 
 // CONNECTION
 
 .connection {
-
-    &__title {
-        margin-bottom: 30px;
-        font-size: 25px;
-        font-weight: 700;
-    }
-
-    &__content {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    &__contacts {
-        display: flex;
-        flex-direction: column;
-        // justify-content: space-between;
-        // height: 200px;
-        padding-right: 35%;
-        grid-column: span 1;
-        font-size: 25px;
-        font-weight: 200;
-    }
-
+  
     &__phone {
         margin-bottom: 50px;
     }
 
-    &__form {
-        grid-column: span 1;
-        
+    &__feedback {
+        margin-bottom: 30px;
+    }
+}
+
+.feedback {
+    &__title {
+        margin-bottom: 20px;
+        font-weight: 400;
     }
 }
 
 .form {
     display: flex;
-    flex-direction: column;
     gap: 20px;
+    margin-bottom: 20px;
 
-    input {
+    &__inputs {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }    
+
+    & input,
+    & textarea {
         height: 46px;
         background-color: inherit;
         border: 1.5px solid $color_softWhite;
@@ -285,6 +382,16 @@ button {
         font-family: 'Roboto';
         font-size: 18px;
         font-weight: 200;
+    }
+
+    &__inputs,
+    &__text {
+        flex: 1 1 50%;
+    }
+
+    textarea {
+        height: auto;
+        resize: none;
     }
 
     &__submit {
@@ -299,34 +406,29 @@ button {
         border-radius: 18px;
         color: $color_softWhite;
     }
-}
 
-// ABOUT
+    &__agreement {
+        display: flex;
+        flex-direction: column;
+        font-size: 12;
 
-.about {
-    & p:not(:last-child) {
-        margin-bottom: 20px;
+        & a {
+            color: $color_grey;
+            text-decoration: underline;
+        }
     }
 
-    &__title {
-        margin-bottom: 30px;
-        font-size: 25px;
-        font-weight: 700;
-    }
-
-    &__team,
-    &__company,
-    &__history {
-        padding-right: 35%;
-        font-size: 20px;
-        line-height: 25px;
+    &__controls {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
     }
 }
 
 // FOOTER 
 
 .footer {
-    height: 64px;
+    height: 185px;
     margin-top: auto;
     border-top: 2px solid $color_softWhite;
 
@@ -335,14 +437,33 @@ button {
         // width: 30%;
         padding: 5px;
         height: 100%;
-        flex-direction: column;
-        justify-content: end;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
     }
 
-    &__rights {
-        align-self: flex-end;
+    &__contacts {
+        display: flex;
+        flex-direction: column;
+        width: 35%;
+        font-size: 21px;
         font-weight: 200;
-        font-size: 12px;
+    }
+
+    &__lead, 
+    &__phone,
+    &__company {
+        margin-bottom: 15px;
+    }
+
+    &__ogrn {
+        margin-right: 20px;
+    }
+
+    &__rigths {
+        display: flex;
+        flex-direction: row;
+        font-size: 16px;
     }
 }
 

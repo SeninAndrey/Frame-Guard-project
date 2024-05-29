@@ -3,240 +3,333 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link type="Image/x-icon" href="favicon.ico" rel="icon">
+	<link type="Image/x-icon" href="favicon.ico" rel="icon">    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="styles/style.css">
     <title>Frame Guard</title>
-    <script defer type="module" src="scripts/swiper.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script> -->
+    <script src="scripts/swiper.min.js"></script>
+    <script defer src="scripts/main.js"></script>
 </head>
 <body>
-    <header class="header container">
-        <a href="#" class="header__logo"></a>
-        <button class="header__mode">
-            <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M15.7392 3.54487C16.0145 4.00474 15.9671 4.58871 15.6213 4.99819C14.1274 6.76715 13.2281 9.05079 13.2281 11.5477C13.2281 17.1576 17.7758 21.7053 23.3857 21.7053C24.1147 21.7053 24.8245 21.6287 25.5078 21.4836C26.0321 21.3722 26.5692 21.6063 26.8444 22.0662C27.1197 22.5261 27.0723 23.11 26.7265 23.5195C24.4051 26.2684 20.9291 28.0175 17.0458 28.0175C10.0507 28.0175 4.37997 22.3468 4.37997 15.3516C4.37997 9.26189 8.67646 4.17854 14.4026 2.96226C14.9269 2.8509 15.464 3.08501 15.7392 3.54487ZM11.6675 6.73279C8.79725 8.52793 6.88823 11.7176 6.88823 15.3516C6.88823 20.9615 11.4359 25.5092 17.0458 25.5092C18.8955 25.5092 20.6293 25.0154 22.1232 24.1515C15.7208 23.5179 10.7198 18.1168 10.7198 11.5477C10.7198 9.84375 11.0568 8.2175 11.6675 6.73279Z" fill="white"/>
-            </svg>
-        </button>
-           
-        <button class="header__burger burger">
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4 16L20 16" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
-                <path d="M4 8L20 8" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-        </button>
+    <header class="header" >
+        <div class="header__container container">
+            <nav class="header__nav nav">
+                <a href="#main" class="nav__item">FrameGuard</a>
+                <a href="#about" class="nav__item">Наш путь</a>
+                <a href="#products" class="nav__item">Продукты</a>
+                <a href="#team" class="nav__item">Команда</a>
+                <a href="#contacts" class="nav__item">Контакты</a>
+            </nav>
+            <button class="header__mode">
+                <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M15.7392 3.54487C16.0145 4.00474 15.9671 4.58871 15.6213 4.99819C14.1274 6.76715 13.2281 9.05079 13.2281 11.5477C13.2281 17.1576 17.7758 21.7053 23.3857 21.7053C24.1147 21.7053 24.8245 21.6287 25.5078 21.4836C26.0321 21.3722 26.5692 21.6063 26.8444 22.0662C27.1197 22.5261 27.0723 23.11 26.7265 23.5195C24.4051 26.2684 20.9291 28.0175 17.0458 28.0175C10.0507 28.0175 4.37997 22.3468 4.37997 15.3516C4.37997 9.26189 8.67646 4.17854 14.4026 2.96226C14.9269 2.8509 15.464 3.08501 15.7392 3.54487ZM11.6675 6.73279C8.79725 8.52793 6.88823 11.7176 6.88823 15.3516C6.88823 20.9615 11.4359 25.5092 17.0458 25.5092C18.8955 25.5092 20.6293 25.0154 22.1232 24.1515C15.7208 23.5179 10.7198 18.1168 10.7198 11.5477C10.7198 9.84375 11.0568 8.2175 11.6675 6.73279Z" fill="white"/>
+                </svg>
+            </button>
+        </div>
     </header>
-    <main>
-        <section class="team">
-            <div class="team__container container">
-                <h2 class="team__title">
-                    Секция с фотографиями команды с краткими описаниями
+    <main class="main" id="main">
+        <section class="logo">
+            <div class="logo__container container">
+                <img class="logo__img" src="../src/images/FG-logo.jpg" alt="">
+                <p class="logo__name">FrameGuard</p>
+            </div>
+        </section>
+
+        <section class="about" id="about">
+            <div class="about__container container">
+                <h2 class="about__title">
+                    Наш путь
                 </h2>
-                <ul class="team__list">
-                    <li class="team__member member">
-                        <h3 class="member__header">Первый Разработчик</h3>
-                        <p class="member__description">
-                            Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Lorem даль страну вопрос подпоясал, заглавных власти над имени моей? Ты заглавных своего деревни взгляд агентство если курсивных! Если, домах.
-                        </p>                        
-                    </li>
-                    <li class="team__member member">
-                        <h3 class="member__header">Второй разработчик</h3>
-                        <p class="member__description">
-                            Далеко-далеко за словесными горами в стране гласных, и согласных живут рыбные тексты. Взгляд инициал океана вскоре до переулка однажды продолжил что букв?
-                        </p>                        
-                    </li>
-                    <li class="team__member member">
-                        <h3 class="member__header">Дизайнер</h3>
-                        <p class="member__description">
-                            Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Буквенных от всех оксмокс текстами, речью путь алфавит меня по всей знаках прямо, однажды подзаголовок переписали безорфографичный щеке предложения одна живет там взобравшись заманивший. Правилами рекламных вскоре лучше грустный? Путь, его всеми?
-                        </p>                        
-                    </li>
-                    <li class="team__member member">
-                        <h3 class="member__header">Бизнес Аналитик</h3>
-                        <p class="member__description">
-                            Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Переписывается дорогу диких решила использовало то он строчка. Дорогу имеет коварных ты до, путь оксмокс решила языкового? Большого, страна грамматики!
-                        </p>                        
-                    </li>
-                    <li class="team__member member">
-                        <h3 class="member__header">Третий Разработчик</h3>
-                        <p class="member__description">
-                            Далеко-далеко за словесными, горами в стране гласных и согласных живут рыбные тексты. Возвращайся взгляд послушавшись которое языком.
-                        </p>                        
-                    </li>
-                    <li class="team__member member">
-                        <h3 class="member__header">Тестировщик</h3>
-                        <p class="member__description">
-                            Далеко-далеко за словесными горами, в стране гласных и согласных живут рыбные тексты. Над, предложения строчка! Подзаголовок осталось предложения составитель своих переулка назад. Что вопроса рыбными страна это!
-                        </p>                        
-                    </li>
-                </ul>
+
+                <div class="swiper__about">
+                    <div class="swiper-wrapper">
+                        <article class="card about__card swiper-slide">
+                            <picture>
+                                <img class="card__img" src="images/prod2.webp">
+                            </picture>
+                            <div class="card__content">
+                                <h3 class="card__title">CreativeWeb Solutions</h3>
+                                <p class="card__description">
+                                    Разработка современного корпоративного веб-сайта для крупной компании, включающая в себя создание уникального дизайна, оптимизацию под мобильные устройства и интеграцию с системами управления контентом.
+                                </p>
+                                <a href="#" class="card__more">Подробнее</a>
+                            </div>
+                        </article>
+                        <article class="card about__card swiper-slide">
+                            <picture>
+                                <img class="card__img" src="images/prod5.webp">
+                            </picture>
+                            <div class="card__content">
+                                <h3 class="card__title">AppDesign Studio</h3>
+                                <p class="card__description">
+                                    Создание интуитивного мобильного приложения для онлайн-магазина, включающее в себя разработку пользовательского интерфейса, возможность онлайн-оплаты и интеграцию с базой данных товаров.
+                                </p>
+                                <a href="#" class="card__more">Подробнее</a>
+                            </div>
+                        </article>
+                        <article class="card about__card swiper-slide">
+                            <picture>
+                                <img class="card__img" src="images/prod4.webp">
+                            </picture>
+                            <div class="card__content">
+                                <h3 class="card__title">WebSolutions Inc.</h3>
+                                <p class="card__description">
+                                    Разработка интерактивного веб-приложения для образовательной платформы, предоставляющей студентам доступ к учебным материалам, тестированию знаний и обратной связи с преподавателями.
+                                </p>
+                                <a href="#" class="card__more">Подробнее</a>
+                            </div>
+                        </article>
+
+                        <article class="card about__card swiper-slide">
+                            <picture>
+                                <img class="card__img" src="images/prod3.webp">
+                            </picture>
+                            <div class="card__content">
+                                <h3 class="card__title">FrontDev</h3>
+                                <p class="card__description">
+                                    Создание лендинг-страницы для маркетинговой кампании, включающей в себя привлекательный дизайн, ясное представление продукта или услуги и механизмы сбора контактной информации от потенциальных клиентов.
+                                </p>
+                                <a href="#" class="card__more">Подробнее</a>
+                            </div>
+                        </article>
+                        <article class="card about__card swiper-slide">
+                            <picture>
+                                <img class="card__img" src="images/prod6.webp">
+                            </picture>
+                            <div class="card__content">
+                                <h3 class="card__title">IT-production</h3>
+                                <p class="card__description">
+                                    Создание пользовательского интерфейса для медицинского приложения, предоставляющего пациентам доступ к медицинской истории, возможность записи на прием к врачу и получение рекомендаций по здоровью.
+                                </p>
+                                <a href="#" class="card__more">Подробнее</a>
+                            </div>
+                        </article>
+                        <article class="card about__card swiper-slide">
+                            <picture>
+                                <img class="card__img" src="images/event1.webp">
+                            </picture>
+                            <div class="card__content">
+                                <h3 class="card__title">Инновационное мобильное приложение</h3>
+                                <p class="card__description">
+                                    соревнование, где разработчики представляют свои уникальные идеи мобильных приложений, демонстрирующих новаторский подход к решению проблем или улучшению повседневной жизни.
+                                </p>
+                                <a href="#" class="card__more">Подробнее</a>
+                            </div>
+                        </article>
+
+                        <article class="card about__card swiper-slide">
+                            <picture>
+                                <img class="card__img" src="images/event2.webp">
+                            </picture>
+                            <div class="card__content">
+                                <h3 class="card__title">UX Challenge</h3>
+                                <p class="card__description">
+                                    Создание пользовательского интерфейса для медицинского приложения, предоставляющего пациентам доступ к медицинской истории, возможность записи на прием к врачу и получение рекомендаций по здоровью.
+                                </p>
+                                <a href="#" class="card__more">Подробнее</a>
+                            </div>
+                        </article>
+                        <article class="card about__card swiper-slide">
+                            <picture>
+                                <img class="card__img" src="images/event3.webp">
+                            </picture>
+                            <div class="card__content">
+                                <h3 class="card__title">Hackathon по разработке веб-приложений"</h3>
+                                <p class="card__description">
+                                    мероприятие, на котором участники в течение ограниченного времени создают функциональные прототипы веб-приложений, демонстрируя свои навыки и способности в области веб-разработки.
+                                </p>
+                                <a href="#" class="card__more">Подробнее</a>
+                            </div>
+                        </article>
+                       
+                    </div>
+                </div>
             </div>
         </section>
 
         <section class="projects">
             <div class="projects__container container">
                 <h2 class="projects__title">
-                    Блок с описанием ключевых проектов компании
+                    Наши проекты
                 </h2>
-                <div class="projects__content">
-                    Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Семь всемогущая вопрос бросил, живет безорфографичный по всей ipsum, они запятой рыбными свою маленькая подзаголовок щеке рекламных вдали! Толку города осталось текстов продолжил которой свой гор грустный предложения наш заголовок. Взобравшись, снова моей большой подпоясал маленькая однажды знаках если прямо курсивных, злых переписали раз проектах рукопись своих ipsum продолжил букв, единственное семантика алфавит текстами? Страну свое коварных он журчит рукописи до даже прямо бросил вершину? Над большого языком до выйти о свой океана ее все напоивший даже если обеспечивает вопрос мир но букв, подпоясал текста домах моей. Власти, он. Запятой дал свое дорогу толку рукописи пояс послушавшись первую не, гор грустный вопроса если то своих переписывается которой жизни рыбного на берегу бросил предупредила раз назад ручеек строчка? Запятых, точках прямо переулка речью коварный безопасную которой. Имени свой своего дороге гор решила подпоясал маленькая сбить коварных, домах дорогу семантика. Вершину за снова вопроса возвращайся злых города свое заглавных, послушавшись запятых буквенных использовало выйти если вдали подпоясал они имени повстречался текст, курсивных, переулка даже там силуэт! Вдали силуэт заманивший решила предупреждал, переписали грамматики его до образ. Несколько, ipsum. Что журчит путь скатился вершину толку имени курсивных предупреждал эта семантика страна подзаголовок, родного гор несколько если она злых снова единственное, предложения, щеке вопроса. Подзаголовок осталось коварный алфавит текстами за переписали грустный курсивных, жаренные переулка несколько встретил подпоясал жизни вскоре пояс домах рекламных обеспечивает ему вопрос языком? Буквенных переписывается над одна свой, предупреждал подпоясал рот дорогу, послушавшись выйти имеет ему, осталось лучше? Города родного, заглавных рукопись выйти, знаках деревни, великий вопрос взобравшись журчит первую парадигматическая имеет! Повстречался вопрос жаренные раз ты курсивных дорогу пор взгляд, на берегу моей проектах о диких бросил текстов он жизни. Безорфографичный меня страна ты первую от всех имеет, родного образ всемогущая курсивных приставка рот там всеми они? От всех над обеспечивает агентство текста лучше?
+                <div class="swiper__projects">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide projects__item">
+                            <img src="images/partner1.svg" alt="логотип первого партнера">
+                        </div>
+                        <div class="swiper-slide projects__item">
+                            <img src="images/partner2.svg" alt="логотип второго партнера">
+                        </div>
+                        <div class="swiper-slide projects__item">
+                            <img src="images/partner3.svg" alt="логотип третьего партнера">
+                        </div>
+                        <div class="swiper-slide projects__item">
+                            <img src="images/partner4.svg" alt="логотип четвертого партнера">
+                        </div>
+                        <div class="swiper-slide projects__item">
+                            <img src="images/partner5.svg" alt="логотип пятого партнера">
+                        </div>
+                        <div class="swiper-slide projects__item">
+                            <img src="images/partner6.svg" alt="логотип шестого партнера">
+                        </div>
+                        <div class="swiper-slide projects__item">
+                            <img src="images/partner7.svg" alt="логотип седьмого партнера">
+                        </div>
+                        <div class="swiper-slide projects__item">
+                            <img src="images/partner8.svg" alt="логотип восьмого партнера">
+                        </div>
+                        <div class="swiper-slide projects__item">
+                            <img src="images/partner9.svg" alt="логотип девятого партнера">
+                        </div>
+                    </div>
                 </div>
+            </div>
+        </section> 
+
+        <section class="products" id="products">
+            <div class="products__container container">
+                <h2 class="products__title">
+                    Продукты
+                </h2> 
+                <video class="products__movie" src="videos/videoplayback.mp4" autoplay controls loop></video>
             </div>
         </section>
 
-        <section class="connection">
-            <div class="connection__container container">
-                <h2 class="connection__title">
-                    Контактная информация и форма обратной связи.
+        <section class="team" id="team">
+            <div class="team__container container">
+                <h2 class="team__title">
+                    Команда
                 </h2>
-                <div class="connection__content">
-                    <div class="connection__contacts">
-                        <a class="connection__mail"  href="mailto:frameguard@mail.ru">
-                            frameguard@mail.ru
-                        </a>
-                        <a class="connection__phone" href="tel:+79991112233">
-                            +7(999)111-22-33
-                        </a>
-                        <p class="connection__address">
-                            123456 г.Москва, ул.Пушкина, д.23, корп.Б
+                <div class="team__content">
+                    <div class="team__description">
+                        <p>
+                            Мы энергичная и творческая группа специалистов, объединенных общей страстью к технологиям и инновациям. В наш состав входят программисты, дизайнеры, тестировщики и другие профессионалы, каждый из которых вносит свой вклад в создание уникальных и инновационных решений. Наши специалисты не только обладают глубокими знаниями в области программирования и информационных технологий, но и способны творчески мыслить, находить нестандартные решения и быстро адаптироваться к изменяющимся требованиям рынка.
+                        </p>
+                        <p>
+                            В нашей команде ценится коллективная работа, обмен опытом и идеями, а также стремление к постоянному самосовершенствованию и изучению новых технологий. Благодаря синергии их усилий, эта команда способна преодолевать технические вызовы, достигать поставленных целей и создавать инновационные продукты, отвечающие потребностям современного рынка информационных технологий.
                         </p>
                     </div>
-                    <form action="mailto:frameguard@mail.ru" enctype="text/plain" class="connection__form form">
-                        <input type="text" class="form__name" placeholder="Введите имя">
-                        <input type="email" class="form__email" placeholder="Введите E-Mail">
-                        <input type="tel" class="form__tel" placeholder="Введите номер телефона">
-                        <button type="submit" class="form__submit">Отправить</button>
-                    </form>
-                </div>
-                
-            </div>
-        </section>
-
-        <section class="about">
-            <div class="about__container container">
-                <h2 class="about__title">
-                    О компании
-                </h2>
-                <p class="about__company">
-                    <strong>Описание компании и ее ценностей</strong>
-                    Далеко-далеко за словесными горами в стране гласных и согласных живут, рыбные тексты. Путь ее лучше мир. Текст по всей решила продолжил свое одна рукопись если маленький, от всех своих лучше власти обеспечивает рукописи рекламных, возвращайся несколько курсивных свой использовало вопроса. Своего маленький своих залетают она реторический возвращайся продолжил, от всех пунктуация напоивший назад lorem по всей над речью дорогу предложения? Продолжил подзаголовок родного даль снова маленькая всеми скатился несколько он большой путь она приставка агентство повстречался, раз сих по всей! Меня вершину семь буквенных строчка. 
-                </p>
-                <p class="about__team">
-                    <strong>Информация о команде</strong>
-                    Далеко-далеко за словесными горами в стране гласных и согласных живут, рыбные тексты. Путь ее лучше мир. Текст по всей решила продолжил свое одна рукопись если маленький, от всех своих лучше власти обеспечивает рукописи рекламных, возвращайся несколько курсивных свой использовало вопроса. Своего маленький своих залетают она реторический возвращайся продолжил, от всех пунктуация напоивший назад lorem по всей над речью дорогу предложения? Продолжил подзаголовок родного даль снова маленькая всеми скатился несколько он большой путь она приставка агентство повстречался, раз сих по всей! Меня вершину семь буквенных строчка. Дорогу родного одна раз текст ведущими заголовок вопроса напоивший имени домах текстами переписали пор языкового алфавит даже решила власти семантика, повстречался свое все, большого от всех. Большой они великий, строчка там путь океана переписали скатился гор о! Вдали там прямо буквенных, инициал гор жаренные которое собрал великий диких парадигматическая даль напоивший пор, безорфографичный последний родного моей грамматики, повстречался ему текстов обеспечивает сих если несколько. Знаках выйти решила продолжил собрал эта маленький гор свой?
-                </p>
-                <p class="about__history">
-                    <strong>История компании</strong>
-                    Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Ему буквенных строчка эта единственное, семантика напоивший путь безопасную большого? Курсивных имени буквенных ее но домах пунктуация. Текста несколько гор которое первую своего свой вопрос lorem, лучше заголовок послушавшись прямо всемогущая ты снова запятых продолжил своих. Ipsum напоивший о взгляд запятой рыбного, безорфографичный океана приставка жаренные путь скатился рукопись бросил, силуэт, необходимыми всеми ты ему собрал рукописи переулка ведущими грамматики. Рот lorem последний подпоясал рыбными рукописи грамматики буквоград переписали! Над от всех заголовок напоивший, пустился, маленькая продолжил lorem, вскоре скатился своего запятой диких вдали жаренные он великий переулка. Запятых вдали рыбного домах. Меня он однажды единственное всемогущая. Осталось, пунктуация даже эта проектах взгляд но ты города реторический домах власти сих меня грамматики пустился ведущими. Живет страну меня однажды даже переписывается бросил агентство деревни ipsum своего не рукопись домах текстами напоивший вскоре дал оксмокс встретил, журчит гор рыбными океана подпоясал? Ipsum всемогущая безопасную грамматики продолжил маленький заголовок курсивных подзаголовок вскоре страну переулка свое послушавшись встретил, большой возвращайся по всей которой жизни первую. Путь сбить парадигматическая однажды оксмокс страну, все о! Над свое снова моей ему на берегу своего ручеек коварных даль вершину текста назад, даже злых напоивший журчит заманивший. Последний вершину семантика обеспечивает диких.
-                </p>
-            </div>
-        </section>
-
-        <section class="projects">
-            <div class="projects__container container">
-                <div class="projects-swiper__container">
-                    <!-- navigation -->
-                    <!-- <button class="projects__slider-left" tabindex="0" aria-label="к предидущему слайду">
-                        <svg class="slider__navi-light" width="30" height="30" viewbox="0 0 30 30" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M15 5.96636e-08C23.2843 1.14601e-06 30 6.71573 30 15C30 23.2843 23.2843 30 15 30C6.71573 30 8.80661e-07 23.2843 1.96701e-06 15C3.05336e-06 6.71573 6.71573 -1.02669e-06 15 5.96636e-08Z" />
-                            <path d="M14 10L19 15L14 20" stroke="black"/>
-                        </svg>
-
-                    </button>
-                    <button class="projects__slider-right" tabindex="0" aria-label="к следующему слайду">
-                        <svg class="slider__navi-light" width="30" height="30" viewbox="0 0 30 30" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M15 5.96636e-08C23.2843 1.14601e-06 30 6.71573 30 15C30 23.2843 23.2843 30 15 30C6.71573 30 8.80661e-07 23.2843 1.96701e-06 15C3.05336e-06 6.71573 6.71573 -1.02669e-06 15 5.96636e-08Z" />
-                            <path d="M14 10L19 15L14 20" stroke="black"/>
-                        </svg>
-                    </button> -->
-                    <div class="projects__swiper swiper">
-                        <!-- Additional required wrapper -->
-                        <div class="swiper-wrapper">
-                            <!-- Slides -->
-                            <div class="swiper-slide partners__item">
-                                <a href="" class="partners__card">
-                                    <img src="images/partner1.svg" alt="логотип первого партнера" class="partners__logo partner__img1">
-                                </a>
-                            </div>
-                            <div class="swiper-slide partners__item">
-                                <a href="#" class="partners__card">
-                                    <img src="images/partner2.svg" alt="логотип второго партнера" class="partners__logo partner__img2">
-                                </a>
-                            </div>
-                            <div class="swiper-slide partners__item">
-                                <a href="#" class="partners__card">
-                                    <img src="images/partner3.svg" alt="логотип третьего партнера" class="partners__logo partner__img3">
-                                </a>
-                            </div>
-                            <div class="swiper-slide partners__item">
-                                <a href="#" class="partners__card">
-                                    <img src="images/partner4.svg" alt="логотип четвертого партнера" class="partners__logo partner__img4">
-                                </a>
-                            </div>
-                            <div class="swiper-slide partners__item">
-                                <a href="#" class="partners__card">
-                                    <img src="images/partner5.svg" alt="логотип пятого партнера" class="partners__logo partner__img5">
-                                </a>
-                            </div>
-                            <div class="swiper-slide partners__item">
-                                <a href="#" class="partners__card">
-                                    <img src="images/partner6.svg" alt="логотип шестого партнера" class="partners__logo partner__img6">
-                                </a>
-                            </div>
-                            <div class="swiper-slide partners__item">
-                                <a href="#" class="partners__card">
-                                    <img src="images/partner7.svg" alt="логотип седьмого партнера" class="partners__logo partner__img7">
-                                </a>
-                            </div>
-                            <div class="swiper-slide partners__item">
-                                <a href="#" class="partners__card">
-                                    <img src="images/partner8.svg" alt="логотип восьмого партнера" class="partners__logo partner__img8">
-                                </a>
-                            </div>
-                            <div class="swiper-slide partners__item">
-                                <a href="#" class="partners__card">
-                                    <img src="images/partner9.svg" alt="логотип девятого партнера" class="partners__logo partner__img9">
-                                </a>
-                            </div>
+                    <div class="team__founder member">
+                        <picture class="member__photo">
+                            <img src="images/man1.webp">
+                        </picture>
+                        <div class="member__content">
+                            <h4 class="member__post">Основатель</h4>
+                            <h3 class="member__name">Иван Петров</h3>
+                            <a class="member__email" href="mailto:petrov@guard.com">petrov@guard.com</a>
+                            <p class="member__description">
+                                Вдохновляющий лидер, который объединяет техническую экспертизу, стратегическое мышление и умение управлять людьми для достижения успеха и процветания компании в динамичной сфере информационных технологий. Обладает стратегическим мышлением и способностью видеть долгосрочные перспективы развития технологий и рынка.
+                            </p>
                         </div>
-
                     </div>
                 </div>
-
+                
+                <div class="team__crew">
+                    <div class="member">
+                        <picture class="member__photo">
+                            <img src="images/woman1.webp">
+                        </picture>
+                        <div class="member__content">
+                            <h4 class="member__post">Разработчик</h4>
+                            <h3 class="member__name">Анна Иванова</h3>
+                            <a class="member__email" href="mailto:ivanova@guard.com">ivanova@guard.com</a>
+                            <p class="member__description">
+                                Обладает способностью работать в команде, обмениваться знаниями и идеями с коллегами, а также принимать участие в обсуждениях и принятии решений по разработке проектов. Анна стремится к постоянному самосовершенствованию, изучая новые технологии и методики разработки.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="member">
+                        <picture class="member__photo">
+                            <img src="images/man2.webp">
+                        </picture>
+                        <div class="member__content">
+                            <h4 class="member__post">Дизайнер</h4>
+                            <h3 class="member__name">Олег Рыбаков</h3>
+                            <a class="member__email" href="mailto:rybakov@guard.com">rybakov@guard.com</a>
+                            <p class="member__description">
+                                Творческий специалист, ответственный за создание пользовательского интерфейса (UI) и пользовательского опыта (UX) для программного обеспечения и веб-приложений. Обладает художественным вкусом, креативностью и пониманием дизайн-принципов, чтобы разработать удобный, привлекательный и интуитивно понятный интерфейс для пользователей.
+                            </p>
+                        </div>
+                    </div>
+                    <div class=" member">
+                        <picture class="member__photo">
+                            <img src="images/woman2.webp">
+                        </picture>
+                        <div class="member__content">
+                            <h4 class="member__post">Тестировщик</h4>
+                            <h3 class="member__name">Ольга Енина</h3>
+                            <a class="member__email" href="mailto:enina@guard.com">enina@guard.com</a>
+                            <p class="member__description">
+                                Тщательная и внимательная к деталям, что позволяет ей проводить различные виды тестирования, включая функциональное, интеграционное, системное, нагрузочное и другие, с целью обеспечения полной проверки программного продукта.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section class="connection">
+        <section class="connection" id="contacts">
             <div class="connection__container container">
                 <h2 class="connection__title">
                     Контакты
                 </h2>
-                <div class="connection__content">
-                    <div class="connection__contacts">
-                        <a class="connection__mail"  href="mailto:frameguard@mail.ru">
-                            frameguard@mail.ru
-                        </a>
-                        <a class="connection__phone" href="tel:+79991112233">
-                            +7(999)111-22-33
-                        </a>
-                        <p class="connection__address">
-                            123456 г.Москва, ул.Пушкина, д.23, корп.Б
-                        </p>
-                    </div>
-                    <form action="mailto:frameguard@mail.ru" enctype="text/plain" class="connection__form form">
-                        <input type="text" class="form__name" placeholder="Введите имя">
-                        <input type="email" class="form__email" placeholder="Введите E-Mail">
-                        <input type="tel" class="form__tel" placeholder="Введите номер телефона">
-                        <button type="submit" class="form__submit">Отправить</button>
+                <div class="connection__feedback feedback">
+                    <h3 class="feedback__title">
+                        Форма обратной связи
+                    </h3>
+                    <form action="mailto:frameguard@mail.ru" enctype="text/plain" class="feedback__form form">
+                        <div class="form__inputs">
+                            <input type="text" class="form__name" placeholder="Ваше имя">
+                            <input type="email" class="form__email" placeholder="E-mail для обратной связи">
+                            <input type="tel" class="form__tel" placeholder="Ваш номер телефона">
+                        </div>
+                        <textarea class="form__text" placeholder="Введите текст сообщения"></textarea>
                     </form>
-                    
-                </div>
+                    <div class="form__controls">
+                        <div class="form__agreement">
+                            <div>
+                                <input type="checkbox" name="agreement">
+                                <label for="agreement">Даю согласие на обработку персональны данных</label>
+                            </div>
+                            <a href="#">Политика конфидениальности</a>
+                        </div>
+                        
+                        <button type="submit" class="form__submit">Отправить</button>
+                    </div>
+                </div>   
             </div>
         </section>
     </main>
+
     <footer class="footer">
-        <div class="footer__container">
-            <p class="footer__rights">
-                Страница с политикой конфиденциальности, содержащая информацию о сборе и использовании данных пользователей.
-            </p>
+        <div class="footer__container container">
+            <div class="footer__contacts">
+                <p class="footer__company">
+                    FrameGuard
+                </p>
+                <p class="footer__lead">
+                    Родион Шкоков
+                </p>
+                <a class="footer__mail"  href="mailto:frameguard@mail.ru">
+                    frameguard@mail.ru
+                </a>
+                <a class="footer__phone" href="tel:+79991112233">
+                    +7(999)111-22-33
+                </a>
+                
+                <p class="footer__address">
+                    123456 г.Москва, ул.Пушкина, д.23, корп.Б
+                </p>
+            </div>
+            <div class="footer__rigths">
+                <p class="footer__ogrn">
+                    ОГРН 1234567890123
+                </p>
+                <p class="footer__inn">
+                    ИНН 980765432175
+                </p>
+            </div>
         </div>
     </footer>
 </body>
