@@ -30,26 +30,23 @@
     font-style: normal;
 }
 
+$breakpoint_1200: 1200px;
+$breakpoint_768: 768px;
+$breakpoint_500: 500px;
+$section_margin_desctop: 30px; 
+$section_margin_mobile: 10px; 
 
-$color_black: #000000;
-$color_softBlack: #151515;
-$color_softWhite: #fafafa;
-$color_grey: #7d7d7d;
-$color_greyTransp: #7d7d7d1a;
-$solidBorderSoftWhite: .15rem solid #fafafa;
-$solidBorderSoftBlack: .15rem solid #151515;
-$solidBorderGrey: .15rem solid #7d7d7d;
-$borderRadius: 2rem;
-$color_alert: #fefea6;
-$color_pink: #b900e7;
-$color_lightPink: #dcb3e7;
-$color_blue: #0500e7;
-$color_lightBlue: #c3c7ee;
-$color_green: #04912c;
-$color_lightGreen: #dfffd9;
-$color_turqoise: #00cbe7;
-$color_lightTourqoise: #edfdff;
 
+
+.dark-mode {  
+    --color_softBlack: #151515;
+    --color_softWhite: #fafafa;
+}
+
+.light-mode {
+    --color_softBlack: #fafafa;
+    --color_softWhite: #151515;
+}
 
 * {
 	margin: 0;
@@ -62,11 +59,12 @@ $color_lightTourqoise: #edfdff;
 }
 
 body {
-    background-color: $color_softBlack;
-    color: $color_softWhite;
+    background-color: var(--color_softBlack);
+    color: var(--color_softWhite);
     font-family: 'Roboto';
     font-size: 16px;
     font-weight: 200;
+    transition: all .3s ease-in-out;
 }
 
 h2 {
@@ -88,15 +86,13 @@ img {
 
 a {
 	text-decoration: none;
-	color: #fff;
+	color: inherit;
 }
 
 .container {
 	max-width: 1400px;
-
-	// padding-left: 35px;
-	// padding-right: 35px;
-    padding: 30px 20px;
+    min-width: 320px;
+    padding: $section_margin_desctop 20px;
 	margin-left: auto; 
 	margin-right: auto; 
 	align-items: center;
@@ -107,35 +103,11 @@ main {
 }
 
 button {
-	
 	border: none;
 	/* font: $fontRobotoBold; */
 	cursor: pointer;
 	transition: all 0.2s ease-in-out;
 }
-
-.button:hover {
-	background-color: #bc572b;
-}
-
-.button:focus {
-	box-shadow: inset 0px 0px 0px 3px #ce4307;
-}
-
-.button:active {
-	background-color: #ce4307;
-}
-
-// html.light-mode {
-//     --color_black: #fff;
-//     --color_softBlack: #fafafa;
-//     --color_softWhite: #151515;
-//     --color_greyTransp: #1a19191a;
-//     --solidBorderSoftWhite: .15rem solid #151515;
-//     --solidBorderSoftBlack: .15rem solid #fafafa;
-//     --solidBorderGrey: .15rem solid #7d7d7d;
-//     --color_alert: #f28175;
-// }
 
 // HEADER
 
@@ -143,8 +115,8 @@ button {
     overflow: hidden;
     position: fixed;
     width: 100%;
-    border-bottom: 2px solid $color_softWhite;
-    background-color: $color_softBlack;
+    border-bottom: 2px solid var(--color_softWhite);
+    background-color: var(--color_softBlack);
     z-index: 3;
 
     &__container {
@@ -160,32 +132,55 @@ button {
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
-        width: 80%;
-
+        width: 93%;
+        color: var(--color_softWhite);
     }
 
     &__logo {
         display: block;
         width: 40px;
         height: 40px;
-        // background-color: #04912c;
         background-image: url(../images/FG-logo.jpg);
         background-size: cover;
     }
 
     &__burger,
+    &__close {
+        display: none;
+        width: 30px;
+        height: 30px;
+        background-color: inherit;
+        color: var(--color_softWhite);
+    }
+
     &__mode {
         background-color: inherit;
+        position: relative;
         border: none;
         width: 40px;
         height: 40px;
+        color: var(--color_softWhite);
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: -12px;
+            bottom: -12px;
+            left: -10px;
+            border-right: 1px solid var(--color_softWhite);
+        }
+    }
+}
+
+.mode {
+    &--hidden {
+        display: none;
     }
 }
 
 // LOGO
 
 .logo {
-
     &__container {
         display: flex;
         flex-direction: row;
@@ -199,7 +194,7 @@ button {
     &__name {
         font-family: 'Bookman';
         line-height: 1;
-        font-size: 12rem;
+        font-size: 100px;
     }
 }
 
@@ -211,7 +206,6 @@ button {
 }
 
 .card {
-
     &__img {
         height: 250px;
         width: 100%;
@@ -234,7 +228,6 @@ button {
 // PROJECTS
 
 .projects {
-   
     &__item {
         align-self: center;
         padding: 10px 30px;
@@ -253,7 +246,6 @@ button {
 // PRODUCTS
 
 .products {
-   
     &__movie {
         width: 100%;
     }
@@ -262,7 +254,6 @@ button {
 // TEAM
 
 .team {
-
     &__content {
         display: flex;
         flex-direction: row;
@@ -303,7 +294,8 @@ button {
     }
 }
 
-.member {
+.member,
+.founder {
     flex: 1 1 30%;
     display: flex;
     flex-direction: row;
@@ -322,7 +314,7 @@ button {
     &__content {
         width: 50%;
         padding: 10px 20px;
-        border: 1px solid $color_softWhite;
+        border: 1px solid var(--color_softWhite);
 
         & :not(:last-child) {
             margin-bottom: 5px;
@@ -375,10 +367,10 @@ button {
     & textarea {
         height: 46px;
         background-color: inherit;
-        border: 1.5px solid $color_softWhite;
+        border: 1.5px solid var(--color_softWhite);
         border-radius: 7px;
         padding: 10px;
-        color: $color_softWhite;
+        color: var(--color_softWhite);
         font-family: 'Roboto';
         font-size: 18px;
         font-weight: 200;
@@ -402,18 +394,18 @@ button {
         font-family: 'Roboto';
         font-size: 16px;
         font-weight: 400;
-        border: 1px solid $color_softWhite;
+        border: 1px solid var(--color_softWhite);
         border-radius: 18px;
-        color: $color_softWhite;
+        color: var(--color_softWhite);
     }
 
     &__agreement {
         display: flex;
         flex-direction: column;
-        font-size: 12;
+        font-size: 12px;
 
         & a {
-            color: $color_grey;
+            color: gray;
             text-decoration: underline;
         }
     }
@@ -428,15 +420,15 @@ button {
 // FOOTER 
 
 .footer {
-    height: 185px;
+    // min-height: 185px;
     margin-top: auto;
-    border-top: 2px solid $color_softWhite;
+    border-top: 2px solid var(--color_softWhite);
 
     &__container {
         display: flex;
         // width: 30%;
         padding: 5px;
-        height: 100%;
+        height: auto;
         flex-direction: row;
         justify-content: space-between;
         align-items: flex-end;
@@ -466,6 +458,206 @@ button {
         font-size: 16px;
     }
 }
+
+@media (max-width: $breakpoint_1200) {
+    .header {
+        &__nav {
+            width: 93%;
+        }
+    }
+
+    .member,
+    .founder {
+        flex-direction: column;
+
+        &__photo {
+            width: auto;
+            height: 250px;
+
+            & img {
+                width: 100%;
+                height: 100%;
+            };
+        }
+
+        &__content {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+@media (max-width: $breakpoint_768) {
+    .header {
+        &__nav {
+            width: 87%;
+        }
+    }
+
+    .logo__name {
+        font-size: 60px;
+    }
+
+    .projects__item {
+        padding: 5px 10px;
+    }
+
+    .team {
+        &__content {
+            flex-direction: column;
+        }
+
+        &__description {
+            width: 100%;
+        }
+
+        &__crew {
+            flex-direction: column;
+        }
+    }
+
+    .founder,
+    .member {
+        flex-direction: row;
+
+        &__content {
+            height: auto;
+        }
+
+        &__photo {
+            width: 60%;
+        }
+    }
+
+    .footer {
+        &__contacts,
+        &__rigths {
+            font-size: 16px;
+        }
+    }
+
+    .form {
+        flex-direction: column;
+
+        &__text {
+            min-height: 150px;
+        }
+    }
+}
+
+@media (max-width: $breakpoint_500) {
+    body {
+        font-size: 12px;
+    }
+
+    h2 {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    main {
+        padding-top: 40px;
+    }
+
+    .container {
+        padding: $section_margin_mobile 10px;
+    }
+
+    .header {
+        border-bottom-width: 1px;
+
+        &__container {
+            height: 40px;
+        }
+
+        &__nav {
+            display: none;
+            flex-direction: column;
+            width: 100vw;
+            height: 100vh;
+            z-index: 3;
+        }
+
+        &__burger {
+            display: block;
+        }
+
+        &__mode {
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    .logo__name {
+        font-size: 40px;
+    }
+
+    .projects {
+        &__item {
+            padding: 0 5px;
+        }
+    }
+
+    .team {
+        &__description {
+            font-size: 12px;
+            line-height: 18px;
+        }
+    }
+
+    .member,
+    .founder {
+        flex-direction: column;
+
+        &__photo {
+            width: 100%;
+        }
+
+        &__content {
+            padding: 5px;
+        }
+    }
+
+    .connection__feedback {
+        margin-bottom: 10px;
+    }
+
+    .form {
+        &__inputs {
+            gap: 10px;
+        }
+
+        input,
+        textarea {
+            height: 30px;
+            font-size: 12px;
+        }
+
+        &__submit {
+            font-size: 12px;
+            padding: 4px 10px;
+        }
+
+    }
+
+    .footer {
+        &__contacts,
+        &__rigths {
+            font-size: 12px;
+        }
+
+        &__company,
+        &__lead,
+        &__phone {
+            margin-bottom: 5px;
+        }
+
+        &__rigths {
+            flex-direction: column;
+        }
+    }
+}
+
 
 
 
