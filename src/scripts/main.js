@@ -74,3 +74,23 @@ modeButton.addEventListener('click', switchMode);
 window.addEventListener('DOMContentLoaded', () => {
     initialTheme(localStorage.getItem('theme'));
 });
+
+// BURGER MENU
+
+const burgerButton = document.querySelector('.header__burger');
+const closeButton = document.querySelector('.header__close');
+const navMenu = document.querySelector('.header__nav');
+const navItems = document.querySelectorAll('.nav__item');
+const body = document.querySelector('body');
+
+function toggleBurgerMenu () {
+    burgerButton.classList.toggle('header__burger--hidden');
+    closeButton.classList.toggle('header__close--hidden');
+    navMenu.classList.toggle('header__nav--visible');
+    body.classList.toggle('no-scroll');
+}
+
+navItems.forEach(item => item.addEventListener('click', toggleBurgerMenu));
+
+burgerButton.addEventListener('click', toggleBurgerMenu);
+closeButton.addEventListener('click', toggleBurgerMenu);

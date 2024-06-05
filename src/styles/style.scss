@@ -35,8 +35,7 @@ $breakpoint_768: 768px;
 $breakpoint_500: 500px;
 $section_margin_desctop: 30px; 
 $section_margin_mobile: 10px; 
-
-
+$colorHover: grey;
 
 .dark-mode {  
     --color_softBlack: #151515;
@@ -87,6 +86,15 @@ img {
 a {
 	text-decoration: none;
 	color: inherit;
+    transition: all .3s ease-in-out;
+
+    &:hover {
+        color: $colorHover;
+    }
+
+    &:active {
+        opacity: 0.5;
+    }
 }
 
 .container {
@@ -109,9 +117,14 @@ button {
 	transition: all 0.2s ease-in-out;
 }
 
+.no-scroll {
+    overflow: hidden;
+}
+
 // HEADER
 
 .header {
+    
     overflow: hidden;
     position: fixed;
     width: 100%;
@@ -120,11 +133,21 @@ button {
     z-index: 3;
 
     &__container {
+        position: relative;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        height: 64px;
+        height: 64px;   
+        
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 70px;
+            border-right: 1px solid var(--color_softWhite);
+        }
     }
 
     &__nav {
@@ -155,19 +178,18 @@ button {
 
     &__mode {
         background-color: inherit;
-        position: relative;
         border: none;
         width: 40px;
         height: 40px;
         color: var(--color_softWhite);
+        transition: all .3s ease-in-out;        
 
-        &::before {
-            content: "";
-            position: absolute;
-            top: -12px;
-            bottom: -12px;
-            left: -10px;
-            border-right: 1px solid var(--color_softWhite);
+        &:hover {
+            transform: rotate(240deg);
+        }
+
+        &:active {
+            color: $colorHover;
         }
     }
 }
@@ -397,6 +419,15 @@ button {
         border: 1px solid var(--color_softWhite);
         border-radius: 18px;
         color: var(--color_softWhite);
+
+        &:hover {
+            color: $colorHover;
+            border-color: $colorHover;
+        }
+
+        &:active {
+            transform: translate(1px, 1px);
+        }
     }
 
     &__agreement {
@@ -462,7 +493,7 @@ button {
 @media (max-width: $breakpoint_1200) {
     .header {
         &__nav {
-            width: 93%;
+            width: 90%;
         }
     }
 
@@ -534,6 +565,15 @@ button {
         &__rigths {
             font-size: 16px;
         }
+
+        &__rigths {
+            flex-direction: column;
+            align-items: flex-end;            
+        }
+
+        &__ogrn {
+            margin-right: 0;
+        }
     }
 
     .form {
@@ -564,27 +604,60 @@ button {
     }
 
     .header {
-        border-bottom-width: 1px;
+        border-bottom-width: 1px;        
 
         &__container {
             height: 40px;
+
+            &::before {
+                right: 40px;
+            }
         }
 
         &__nav {
             display: none;
-            flex-direction: column;
+            position: fixed;
+            top: 41px;
+            left: 0;
             width: 100vw;
-            height: 100vh;
-            z-index: 3;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: 20px;
+            background-color: var(--color_softBlack);
+
+            &--visible {
+                display: flex;
+            }   
+
+            & a {
+                align-self: flex-start;
+                font-size: 16px;
+
+                &:not(:last-child) {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+
+        &__close {
+            display: block;
+
+            &--hidden {
+                display: none;
+            }   
         }
 
         &__burger {
             display: block;
+
+            &--hidden {
+                display: none;
+            }           
         }
 
         &__mode {
-            width: 20px;
-            height: 20px;
+            width: 25px;
+            height: 25px;
         }
     }
 
@@ -650,10 +723,6 @@ button {
         &__lead,
         &__phone {
             margin-bottom: 5px;
-        }
-
-        &__rigths {
-            flex-direction: column;
         }
     }
 }
